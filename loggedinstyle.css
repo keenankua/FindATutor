@@ -1,0 +1,484 @@
+
+	.bg-darkgrey { 
+		background-color: #2f2f2f; /* Dark grey */
+		color: #ffffff;
+	}
+
+    body,html{
+		height: 100%;
+
+	}
+
+	/* remove outer padding */
+	.main .row{
+		padding: 0px;
+		margin: 0px;
+	}
+
+	/*Remove rounded coners*/
+
+	nav.sidebar.navbar {
+		border-radius: 0px;
+	}
+	
+	nav.sidebar, .main{
+		-webkit-transition: margin 200ms ease-out;
+	    -moz-transition: margin 200ms ease-out;
+	    -o-transition: margin 200ms ease-out;
+	    transition: margin 200ms ease-out;
+	}
+
+	
+	/* Add gap to nav and right windows.*/
+	.main {
+		padding: 10px 10px 0 10px;
+	}
+
+	/*Custom checkboxes */
+	.custom-checkbox > [type="checkbox"],
+	.custom-checkbox > label{
+		margin-bottom:0px !important;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.custom-checkbox > [type="checkbox"]:not(:checked),
+	.custom-checkbox > [type="checkbox"]:checked {
+		position: absolute;
+		left: -9999px;
+	}
+	.custom-checkbox > [type="checkbox"]:not(:checked) + label,
+	.custom-checkbox > [type="checkbox"]:checked + label {
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+	}
+	.custom-checkbox > [type="checkbox"]:not(:checked) + label:before,
+	.custom-checkbox > [type="checkbox"]:checked + label:before {
+		content: '';
+		position: absolute;
+		left:0; 
+		top: 50%;
+		margin-top:-9px;
+		width: 17px; 
+		height: 17px;
+		border: 1px solid #ddd;
+		background: #ffffff;
+		border-radius: 2px;
+	}
+	.custom-checkbox > [type="checkbox"]:not(:checked) + label:after,
+	.custom-checkbox > [type="checkbox"]:checked + label:after {
+		font: normal normal normal 12px/1 'Glyphicons Halflings';
+		content: '\e013';
+		position: absolute;
+		top: 50%;
+		margin-top:-7px;
+		left: 2px;
+		color: #1abc9c;
+		xtransition: all .2s;
+	}
+	
+	.custom-checkbox > [type="checkbox"]:not(:checked) + label:after {
+		opacity: 0;
+		transform: scale(0);
+	}
+	.custom-checkbox > [type="checkbox"]:checked + label:after {
+		opacity: 1;
+		transform: scale(1);
+	}
+	
+	.custom-checkbox > [type="checkbox"][data-indeterminate] + label:after,
+	.custom-checkbox > [type="checkbox"][data-indeterminate] + label:after {
+		content: '\2212';
+		left: 2px;
+		opacity: 1;
+		transform: scale(1);
+	}
+	
+	.custom-checkbox > [type="checkbox"]:disabled:not(:checked) + label:before,
+	.custom-checkbox > [type="checkbox"]:disabled:checked + label:before {
+	  	box-shadow: none;
+	  	background-color: #eeeeee;
+		border-color: #eeeeee;
+		cursor: not-allowed;
+		opacity: 1;
+		color: #dadada;
+	}
+	.custom-checkbox > [type="checkbox"]:disabled:checked + label:after {
+	  color: #dadada; cursor: not-allowed;
+	}
+	.custom-checkbox > [type="checkbox"]:disabled + label {
+	  color: #aaa; cursor: not-allowed;
+	}
+	.custom-checkbox > [type="checkbox"]:checked:focus + label:before,
+	.custom-checkbox > [type="checkbox"]:not(:checked):focus + label:before {
+		border: 1px solid #66afe9;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	}
+	.custom-checkbox > label:hover:before {
+  		border: 1px solid #88D2FF !important;
+	}
+	.custom-checkbox > [type="checkbox"]:disabled:not(:checked) + label:hover:before,
+	.custom-checkbox > [type="checkbox"]:disabled:checked + label:hover:before{
+		border: 1px solid #E4E4E4 !important;
+	}
+	
+	.custom-checkbox label {
+		font-size: 16px;
+		margin-left: 0px;
+	}
+	
+	.radioContainer {
+	  display: block;
+	  position: relative;
+	  padding-left: 35px;
+	  margin-bottom: 12px;
+	  cursor: pointer;
+	  font-size: 16px;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+
+	/* Hide the browser's default radio button */
+	.radioContainer input {
+	  position: absolute;
+	  opacity: 0;
+	}
+
+	/* Create a custom radio button */
+	.checkmark {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: 20px;
+	  width: 20px;
+	  background-color: #eee;
+	  border-radius: 50%;
+	}
+
+	/* On mouse-over, add a grey background color */
+	.radioContainer:hover input ~ .checkmark {
+	  background-color: #ccc;
+	}
+
+	/* When the radio button is checked, add a blue background */
+	.radioContainer input:checked ~ .checkmark {
+	  background-color: #1abc9c;
+	}
+
+	/* Create the indicator (the dot/circle - hidden when not checked) */
+	.checkmark:after {
+	  content: "";
+	  position: absolute;
+	  display: none;
+	}
+
+	/* Show the indicator (dot/circle) when checked */
+	.radioContainer input:checked ~ .checkmark:after {
+	  display: block;
+	}
+
+	/* Style the indicator (dot/circle) */
+	.radioContainer .checkmark:after {
+	  top: 6px;
+	  left: 6px;
+	  width: 8px;
+	  height: 8px;
+	  border-radius: 50%;
+	  background: white;
+	}
+	
+	/* Custom sliders */
+	.slidecontainer {
+		width: 80%; /* Width of the outside container */
+	}
+
+	/* The slider itself */
+	.slider {
+		-webkit-appearance: none;  /* Override default CSS styles */
+		appearance: none;
+		width: 100%; /* Full-width */
+		height: 10px; /* Specified height */
+		background: #d3d3d3; /* Grey background */
+		outline: none; /* Remove outline */
+		opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+		-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+		transition: opacity .2s;
+		
+	}
+
+	/* Mouse-over effects */
+	.slider:hover {
+		opacity: 1; /* Fully shown on mouse-over */
+	}
+
+	/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none; /* Override default look */
+		appearance: none;
+		width: 25px; /* Set a specific slider handle width */
+		height: 25px; /* Slider handle height */
+		background: #1abc9c; /* Green background */
+		cursor: pointer; /* Cursor on hover */
+		border-radius: 50%;   
+	}
+
+	.slider::-moz-range-thumb {
+		width: 25px; /* Set a specific slider handle width */
+		height: 25px; /* Slider handle height */
+		background: #1abc9c; /* Green background */
+		cursor: pointer; /* Cursor on hover */
+		border-radius: 50%; 
+	}
+	
+	.sliderText {
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	@media (max-width: 767px) {
+		.filler {
+			max-height: 0px;
+		}
+		
+		.top-filler {
+			max-height: 0px;
+		}
+		
+		.middle {
+			padding-right: 0px;
+		}
+		
+		.main {
+			padding-top: 75px;
+			padding-bottom: 25px;
+		}
+		
+		.navbar-inverse {
+			z-index: 8000;
+			position: fixed;
+			width: 100%;
+			margin-bottom: 50px;
+		}
+	}
+	
+	/* .....NavBar: Icon only with coloring/layout.....*/
+
+	/*small/medium side display*/
+	@media (min-width: 768px) {
+		
+		/*Allow main to be next to Nav*/
+		.main{
+			position: absolute;
+			width: calc(100% - 40px); /*keeps 100% minus nav size*/
+			margin-left: 100px;
+			float: right;
+			max-width: 80%;
+			margin-top: 50px;
+		}
+
+		/*lets nav bar to be showed on mouseover*/
+		nav.sidebar:hover + .main{
+			margin-left: 100px;
+		}
+
+		/*Center Brand*/
+		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+			margin-left: 0px;
+		}
+		/*Center Brand*/
+		nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+			text-align: center;
+			width: 100%;
+			margin-left: 0px;
+		}
+
+		/*Center Icons*/
+		nav.sidebar a{
+			padding-right: 13px;
+		}
+
+		/*adds border top to first nav box */
+		nav.sidebar .navbar-nav > li:first-child{
+			border-top: 1px #e5e5e5 solid;
+		}
+
+		/*adds border to bottom nav boxes*/
+		nav.sidebar .navbar-nav > li{
+			border-bottom: 1px #e5e5e5 solid;
+		}
+
+		/* Colors/style dropdown box*/
+		nav.sidebar .navbar-nav .open .dropdown-menu {
+			position: static;
+			float: none;
+			width: auto;
+			margin-top: 0;
+			background-color: transparent;
+			border: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			
+		}
+
+		/*allows nav box to use 100% width*/
+		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+			padding: 0 0px 0 0px;
+		}
+
+		/*colors dropdown box text */
+		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+			color: #777;
+		}
+
+		/*gives sidebar width/height*/
+		nav.sidebar{
+			width: 200px;
+			height: 100%;
+			margin-left: -160px;
+			float: left;
+			z-index: 8000;
+			margin-bottom: 0px;
+			font-size: 16px;
+		}
+
+		/*give sidebar 100% width;*/
+		nav.sidebar li {
+			width: 100%;
+		}
+
+		/* Move nav to full on mouse over*/
+		nav.sidebar:hover{
+			margin-left: 0px;
+		}
+		/*for hiden things when navbar hidden*/
+		.forAnimate{
+			opacity: 0;
+		}
+		
+		.navbar-nav.navbar-center {
+			position: absolute;
+			left: 50%;
+			transform: translatex(-50%);
+		}
+	}
+	
+	/* .....NavBar: Fully showing nav bar..... */
+
+	@media (min-width: 1330px) {
+
+		/*Allow main to be next to Nav*/
+		.main{
+			width: calc(100% - 200px); /*keeps 100% minus nav size*/
+			margin-left: 260px;
+			margin-top: 50px;
+			max-width: 75%;
+		}
+
+		/*Show all nav*/
+		nav.sidebar{
+			margin-left: 0px;
+			float: left;
+		}
+		/*Show hidden items on nav*/
+		nav.sidebar .forAnimate{
+			opacity: 1;
+		}
+		
+
+		/*lets nav bar to be showed on mouseover*/
+		nav.sidebar:hover + .main{
+			margin-left: 260px;
+		}
+	}
+	
+	
+	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+		background-color: transparent;
+		
+	}
+
+	nav:hover .forAnimate{
+		opacity: 1;
+	}
+	
+	section{
+		padding-left: 15px;
+	}
+	
+	.navbar-nav  li a:hover {
+		  color: #1abc9c !important;
+	}
+	
+	
+	.middle {
+		padding-top: 80px;
+		padding-left: 0px;
+	}
+	
+	.top-navbar {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border: 0;
+		border-radius: 0;
+		margin-bottom: 0;
+		font-size: 15px;
+		z-index: 9000;
+		letter-spacing: 2px;
+	}
+	
+	.top-navbar .glyphicon {
+		font-size: 14px;
+		color: #1abc9c;
+		padding-right: 10px;
+	}
+	
+	.sidebar .glyphicon {
+		color: #1abc9c;
+	}
+	
+	.footer {
+		padding-bottom: 50px;
+		padding-top: 50px;
+	}
+	
+	.footer a {
+		font-size: 15px;
+		letter-spacing: 2px;
+		color: #ffffff;
+	}
+	
+	.footer a:hover {
+		color: #1abc9c !important;
+		text-decoration: none !important;
+	}
+	
+	.name {
+		display: inline-block;
+		float: right;
+		font-size: 14px;
+	}
+
+	@media (max-width: 991px) {
+		.name {
+			visibility: hidden;
+		}
+	}
+	
+	@media (max-width: 1199px) {
+		.name {
+			font-size: 12px;
+		}
+	}
+
+	
+
+	
+	
+	
+	
